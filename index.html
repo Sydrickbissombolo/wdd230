@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <meta name="description" content="WDD 230 - Web Frontend Development">
     <meta name="newton" content="sydrick newton bisoombolo">
     <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./scripts/getDates.js">
 </head>
+
 <body>
     <header class="image-container">
         <img src="./images/newton.jpg" alt="My image">
@@ -20,47 +23,50 @@
             <li><a href="chamber/siteplan.html">Site Plan</a></li>
             <li><a href="chamber/" target="_blank">Chamber</a></li>
             <li><a href="https://www.byui.edu/" target="_blank">BYU-Idaho</a></li>
-            <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/5" target="_blank">Scripture</a></li>
+            <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/5" target="_blank">Scripture</a>
+            </li>
         </ul>
     </nav>
 
     <main>
         <h2>WDD 230: Web Frontend Development</h2>
         <hr class="section-devider">
-        
+
         <section class="learning-card">
             <h3>Learning Activities</h3>
-            <ul>
+            <ol>
                 <!-- I will Populate this list with learning activities as we progress through the course -->
-                <li><a href="#">Activity 1</a></li>
-                <li><a href="#">Activity 2</a></li>
-                <li><a href="#">Activity 3</a></li>
-            </ul>
+                <li><b>01:</b><a href="#"><span>Holy Layout | JS Pen</span></a></li>
+                <li><b>02:</b> <a href="#"><span>Media Query | Design Principles Document</span></a></li>
+                <li><b>03:</b></li>
+                <li><b>04:</b></li>
+                <li><b>05:</b></li>
+                <li><b>06:</b></li>
+                <li><b>07:</b></li>
+                <li><b>08:</b></li>
+                <li><b>09:</b></li>
+                <li><b>10:</b></li>
+            </ol>
         </section>
 
-        <section class="card">
-            <h3>Brazzaville, Congo</h3>
-            <!-- Placeholders for information -->
-            <p>32°C - Sunshine</p>
+        <section class="info-card">
+            <h3>Information</h3>
+            <p>Brazzaville, Congo</p>
+            <p><i class="las la-sun"></i>32°C - Sunshine</p>
             <p>Visits: 20</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentYear"></span> Newton, Congo Brazzaville</p>
-        <p id="lastModified"></p>
+        <p>Copyright&copy; <span id="currentYear"><br>2023</span> Newton,<br>Congo Brazzaville</p>
+        <p id="lastModified"><span>Last modification: </span></p>
     </footer>
-
-    <!-- JavaScript to populate the current year and last modified date -->
-    <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // JavaScript to populate the last modified date
-        // Example:
-        // document.getElementById('lastModified').textContent = "Last Modified: " + document.lastModified;
-    </script>
 </body>
+
 </html>
-    
+<script>const lastModifiedParagraph = document.getElementById("lastModified");
+    const lastModifiedDate = new Date(document.lastModified);
+    lastModifiedParagraph.textContent = "Last modification: " + lastModifiedDate.toDateString();</script>
 </body>
+
 </html>
