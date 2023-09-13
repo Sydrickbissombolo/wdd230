@@ -61,12 +61,13 @@
         <p>Copyright&copy; <span id="currentYear"><br>2023</span> Newton,<br>Congo Brazzaville</p>
         <p id="lastModified"><span>Last modification: </span></p>
     </footer>
+
+    <script>
+        const lastModifiedParagraph = document.getElementById("lastModified");
+        const lastModifiedDate = new Date(document.lastModified);
+        lastModifiedParagraph.textContent = "Last modification: " + lastModifiedDate.toDateString();
+    </script>
 </body>
 
 </html>
-<script>const lastModifiedParagraph = document.getElementById("lastModified");
-    const lastModifiedDate = new Date(document.lastModified);
-    lastModifiedParagraph.textContent = "Last modification: " + lastModifiedDate.toDateString();</script>
-</body>
-
-</html>
+        
