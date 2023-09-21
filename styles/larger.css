@@ -1,0 +1,31 @@
+
+/* Media Query for Larger Screens */
+@media screen and (min-width: 768px) {
+    /*styles for larger screens */
+    .nav-bar {
+        justify-content: space-between;
+    }
+
+    .nav-bar ul {
+        flex-direction: row;
+    }
+
+    .nav-bar li {
+        margin: 0;
+    }
+
+    .nav-bar a {
+        margin: 0 15px;
+    }
+
+    .main {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .learning-card,
+    .info-card {
+        flex: 1;
+        margin-right: 20px;
+    }
+}

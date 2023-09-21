@@ -1,0 +1,68 @@
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+/* HEADER DESIGN*/
+.document-container {
+    background-color: crimson;
+    
+}
+.document-container h1 h2 {
+    display: flex;
+    text-align: center;
+}
+/* //HEADER DESIGN*/
+
+/*REJOICE-CARD*/
+.rejoice-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*.rejoice-card h2 {
+    background-color: darkgray;
+    text-align: center;
+}*/
+
+.repeat-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Prayer-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.display-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+}
+/*//REJOICE-CARD*/
+
+/*@media (min-width: 992px)*/
+
+/*Footer*/
+footer {
+    background-color: crimson;
+}
+footer p {
+    color: #fff;
+    text-align: center;
+}
+footer span {
+    color: crimson;
+}
