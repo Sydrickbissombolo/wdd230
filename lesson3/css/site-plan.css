@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "poppins" sans-serif Georgia, serif; /* TYPOGRAPHY */
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    color: #f5f5f5;
+    text-align: center;
+}
+
+
