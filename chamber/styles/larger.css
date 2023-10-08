@@ -1,0 +1,36 @@
+
+@media (min-width: 769px) {
+    header {
+      padding: 20px; /* Adjust header padding for larger screens */
+    }
+  
+    header img {
+      width: 70px; /* Increase the logo size for larger screens */
+    }
+  
+    header a img {
+      width: 20px; /* Increase social media icon size for larger screens */
+    }
+  
+    header ul {
+      justify-content: right; /* Right-align navigation links for larger screens */
+    }
+  
+    header li {
+      margin: 0 10px; /* Increase margin between navigation links for larger screens */
+    }
+  
+    .hero {
+      text-align: left; /* Left-align content in the hero section for larger screens */
+    }
+  
+    .hero img {
+      max-width: 100%; /* Ensure the image scales properly for larger screens */
+    }
+  
+    .btn {
+      font-size: 20px; /* Increase button font size for larger screens */
+    }
+  
+  }
+  
