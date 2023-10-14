@@ -14,16 +14,25 @@
     <link rel="stylesheet" href="./styles/medium.css">
     <link rel="stylesheet" href="./favicon.ico">
     <link rel="stylesheet" href="./scripts/script.js">
+    <link rel="stylesheet" href="./styles/darkmode.css">
+    <script src="./scripts/darkmode.js" defer></script>
 </head>
 <body>
     <!-- NAVBAR -->
     <header>
+        <div class="menu-toggle">
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
         <nav>
             <img src="./images/logo.png" alt="Site name">
             <a href="https://www.facebook.com/yourpage"><img src="./images/facebook.png" alt="Facebook"></a>
             <a href="https://twitter.com/yourhandle"><img src="./images/twitter.png" alt="Twitter"></a>
             <a href="https://www.linkedin.com/in/yourprofile"><img src="./images/linkedin.png" alt="LinkedIn"></a>
-            <ul>
+            <ul class="menu">
                 <li><a href="#Home">Home</a></li>
                 <li><a href="#discover">Discover</a></li>
                 <li><a href="#directory">Directory</a></li>
@@ -37,7 +46,7 @@
     <div class="hero">
         <div class="image-container">
             <img src="./images/landscape.jpg" alt="">
-            <button class="btn"><a href="#">Join now</a></button>
+            <button class="btn">Join now</button>
         </div>
     </div>
     <main class="column">
@@ -69,6 +78,7 @@
         <p id="lastModified"><span>Last modification: </span></p>
     </footer>
 
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/darkmode.js"></script>
+    <script src="./scripts/script.js" defer></script>
 </body>
 </html>
