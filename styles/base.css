@@ -200,6 +200,15 @@ body {
     margin-top: 25px;
 }
 
+.label, .visits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin-top: 0;
+}
+
 /* Footer Styles */
 footer {
     background-color: green;

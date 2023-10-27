@@ -78,7 +78,8 @@
             <h3>Information</h3>
             <p>Brazzaville, Congo</p>
             <p><i class="las la-sun"></i>32°C - Sunshine</p>
-            <p>Visits: 20</p>
+            <span class="label">Number of Visits: </span>
+            <span class="visits"></span>
         </section>
     </main>
 
@@ -106,6 +107,7 @@
         const lastModifiedDate = new Date(document.lastModified);
         lastModifiedParagraph.textContent = "Last modification: " + lastModifiedDate.toDateString();
     </script>
+    <script src="./scripts/counter.js"></script>
 </body>
 
 </html>
