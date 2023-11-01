@@ -23,6 +23,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
+    height: 60px;
   }
   
   /* Center the logo image and add margin to social media icons */
@@ -42,8 +43,9 @@ header {
   /* Style the navigation links */
   header ul {
     display: flex;
-    justify-content: flex-end;
     list-style: none;
+    margin: 0;
+    padding: 0;
   }
   
   header li {
@@ -191,7 +193,7 @@ footer p {
   background: #fff;
 }
 
-/* Hamburger menu animation */
+/* Hamburger menu animation 
 .menu-toggle span:nth-child(2) {
   width: 26px;
 }
@@ -210,16 +212,16 @@ footer p {
 }
 
 .menu-toggle input:checked ~ .menu {
-  display: block;
+  display: flex;
 }
-
+*/
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
     position: absolute;
     top: 10px;
     right: 10px;
-    z-index: 1;
+    z-index: 1000;
   }
 
   nav ul {
@@ -235,6 +237,7 @@ footer p {
     background: #f0f0f0;
     border: 1px solid #333;
     padding: 10px;
+    z-index: 1000;
   }
 }
 /* Larger screen */
@@ -243,9 +246,9 @@ footer p {
     display: none;
   }
 
-  nav ul {
+  header nav ul {
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
   }
 
   header li {
@@ -253,13 +256,13 @@ footer p {
   }
 }
 
-/* Discover Home Page Styles*/
+/* Discover Home Page Styles */
 
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 20px;
-  padding: 20px;
+  padding: 80px 20px 20px 20px;
 }
 
 .sidebar {
