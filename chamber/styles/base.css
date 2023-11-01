@@ -8,18 +8,25 @@
 body {
     background-color: #f0f0f0;
     color: #333;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
 }
 
 /* Set the background color and padding for the header */
 header {
     background-color: #333;
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
   }
   
   /* Center the logo image and add margin to social media icons */
   header img {
-    display: inline-block;
-    float: none;
     border-radius: 50%;
     width: 70px;
     margin-right: 10px;
@@ -35,7 +42,7 @@ header {
   /* Style the navigation links */
   header ul {
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     list-style: none;
   }
   
@@ -244,4 +251,76 @@ footer p {
   header li {
     margin: 0 10px;
   }
+}
+
+/* Discover Home Page Styles*/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.sidebar {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.sidebar h2 {
+  color: #333333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.sidebar p {
+  color: #555555;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.sidebar h3 {
+  color: #333333;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.main-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  gap: 20px;
+}
+
+.gallery figure {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.1);
+}
+
+figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
 }
