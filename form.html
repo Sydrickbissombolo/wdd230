@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sydrick Newton - WDD 230 - Web Frontend Development</title>
+    <meta name="description" content="WDD 230 - Web Frontend Development">
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/larger.css">
+    <link rel="stylesheet" href="./styles/form.css">
+    <link rel="stylesheet" href="./scripts/getDates.js">
+    <link rel="stylesheet" href="favicon.ico">
+    <link rel="stylesheet" href="https://codepen.io/blazzard-jason/pen/LYjLRqN">
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar-wrapper nav-bar">
+            <ul>
+                <li><a href="./lesson5/bom.html">Home</a></li>
+                <li><a href="./lesoon2/design-principal.html">Design Principles</a></li>
+                <li><a href="./lesson3/chamber-site-plan.html">Site Plan</a></li>
+                <li><a href="chamber/" target="_blank">Chamber</a></li>
+                <li><a href="https://www.byui.edu/" target="_blank">BYU-Idaho</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/5" target="_blank">Scripture</a></li>
+                <li><a href="./lesson5/bom.html">DOM</a></li>
+                <li><a href="./form.html">Form</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form action="record.html" method="get">
+            <label for="username" re>Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+    
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required pattern="[A-Za-z0-9]{8,}" title="Password must be at least 8 characters long and can only be alpha-numeric."><br><br>
+    
+            <label for="confirm_password">Confirm Password:</label><br>
+            <input type="password" id="confirm_password" name="confirm_password" required oninput="check(this)"><br><br>
+    
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@byui\.edu$" title="Please enter a valid email address"><br><br>
+    
+            <label for="page_rating">Page Rating:</label><br>
+            <input type="range" id="page_rating" name="page_rating" min="1" max="10" step="1" oninput="document.getElementById('rating').innerHTML = this.value;"><span id="rating">5</span><br><br>
+    
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+
+
+
+
+
+
+
+    <footer>
+        <p>Copyright&copy; <span id="currentYear"><br>2023</span> Newton,<br>Congo Brazzaville</p>
+        <p id="lastModified"><span>Last modification: </span></p>
+    </footer>
+
+    <script src="./scripts/form.js"></script>
+</body>
+</html>

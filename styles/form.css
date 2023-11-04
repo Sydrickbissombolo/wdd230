@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    font-family: 'Merriweather', serif; /* chosen font family */
+}
+
+/* Header Styles */
+.image-container {
+    background-color: green;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.image-container img {
+    max-width: 100px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Navigation Styles */
+.nav-bar-wrapper {
+    background-color: bisque;
+    width: 100%;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+@media (max-width: 768px) {
+    .nav-bar-wrapper {
+        display: none;
+    }
+}
+
+.nav-bar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.nav-bar li {
+    margin: 0 15px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+:root {
+    --main-color: #336699;
+    --input-padding: 10px;
+    --input-margin-bottom: 20px;
+  }
+  
+  form {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--main-color);
+  }
+  
+  input {
+    width: calc(100% - 20px);
+    padding: var(--input-padding);
+    margin-bottom: var(--input-margin-bottom);
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  input[type="range"] {
+    width: calc(100% - 20px);
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--main-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #224466;
+  }
+
+
+
+
+
+/* Footer Styles */
+footer {
+    background-color: green;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+footer span {
+    color: chocolate;
+}
