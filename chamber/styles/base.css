@@ -327,3 +327,59 @@ figcaption {
   padding: 10px;
   text-align: center;
 }
+
+
+form {
+  width: 50%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333333;
+}
+
+input,
+select,
+textarea {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #336699;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #224466;
+}
+
+.membership-benefits {
+  margin-top: 20px;
+}
+
+.membership-benefits h2 {
+  color: #336699;
+}
+
+.membership-benefits ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.membership-benefits li {
+  margin-bottom: 10px;
+}

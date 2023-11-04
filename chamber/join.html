@@ -38,47 +38,47 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="#directory">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
+                <li><a href="#join">Join</a></li>
             </ul>
         </nav>
     </header>
     <!-- //NAVBAR -->
-
-    <!-- MAIN -->
-    <div class="hero">
-        <div class="image-container">
-            <picture>
-                <source meta="(max-width: 600px)" srcset="./images/landscape.webp">
-                <source meta="(max-width: 900px)" srcset="./images/landscape.webp">
-                <source meta="(max-width: 901px)" srcset="./images/landscape.webp">
-                <img src="./images/landscape.webp" alt="Hero Image">
-            </picture>
-            <button class="btn">Join now</button>
-        </div>
-
-    </div>
-    <main class="column">
-        <h2>WDD 230: Web Frontend Development</h2>
-        <hr class="section-devider">
-        
-
-        <section class="events">
-            <h3>Events</h3>
-            <h4>Basketball Match - Super Basket</h4>
-            <p>Join us for the most incredible match ever seen, Monday at 2:30 p.m</p>
-            
-        </section>
-
-        <section class="weather">
-            <h3>Weather</h3>
-            <p><i class="las la-sun"></i>32°C - Sunshine</p>
-            <p>Humidity: 20%</p>
-            <p>Wind Speed: 5 mph</p>
-            <p>Wind Chill: <span id="windChill">N/A</span></p>
-        </section>
-
+    <main>
+        <form action="thankyou.html" method="get">
+            <label for="first_name">Applicant's First Name:</label><br>
+            <input type="text" id="first_name" name="first_name" required><br><br>
+    
+            <label for="last_name">Applicant's Last Name:</label><br>
+            <input type="text" id="last_name" name="last_name" required><br><br>
+    
+            <label for="title">Applicant's Title/Position:</label><br>
+            <input type="text" id="title" name="title" pattern="[A-Za-z -]{7,}" title="Please enter a valid title with at least seven characters and only alphabets, hyphens, and spaces."><br><br>
+    
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" required placeholder="example@example.com"><br><br>
+    
+            <label for="phone">Mobile Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+    
+            <label for="organization">Business/Organization Name:</label><br>
+            <input type="text" id="organization" name="organization" required><br><br>
+    
+            <label for="membership">Membership Level:</label><br>
+            <select id="membership" name="membership">
+                <option value="NP Membership">NP Membership</option>
+                <option value="Bronze Membership">Bronze Membership</option>
+                <option value="Silver Membership">Silver Membership</option>
+                <option value="Gold Membership">Gold Membership</option>
+            </select><br><br>
+    
+            <label for="description">Business/Organization Description:</label><br>
+            <textarea id="description" name="description"></textarea><br><br>
+    
+            <input type="hidden" id="timestamp" name="timestamp" value="">
+    
+            <input type="submit" value="Submit">
+        </form>
     </main>
-    <!-- //MAIN -->
 
 
 
