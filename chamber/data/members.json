@@ -1,0 +1,63 @@
+
+
+{
+    "members": [
+      {
+        "name": "LCDE",
+        "address": "22 Mamou Street, Brazzaville",
+        "phone": "242-068-867-953",
+        "website": "http://www.lacongolaisedeseaux.com",
+        "image": "lcde.jpg",
+        "membershipLevel": "Gold"
+      },
+      {
+        "name": "EEC",
+        "address": "12 gaule Avenue, Brazzaville",
+        "phone": "242-076-123-587",
+        "website": "http://www.energieelectrique.com",
+        "image": "eec.jpg",
+        "membershipLevel": "Silver"
+      },
+      {
+        "name": "Radison Blu",
+        "address": "43 massanga Street, Brazzaville",
+        "phone": "242-432-567-890",
+        "website": "http://www.radisonblu.com",
+        "image": "radison.jpg",
+        "membershipLevel": "Bronze"
+      },
+      {
+        "name": "S & I",
+        "address": "45 mafouta Street, Brazzaville",
+        "phone": "242-068-069-842",
+        "website": "http://www.wise2.com",
+        "image": "SI.jpg",
+        "membershipLevel": "Gold"
+      },
+      {
+        "name": "MTN Congo",
+        "address": "201 Makola Street, Brazzaville",
+        "phone": "242-093-435-342",
+        "website": "http://www.mtncg.com",
+        "image": "mtn.jpg",
+        "membershipLevel": "Gold"
+      },
+      {
+        "name": "Airtel Cg",
+        "address": "23 charles de Gaule Avenue, Brazzaville",
+        "phone": "242-894-453-768",
+        "website": "http://www.airtel.com",
+        "image": "airtel.jpg",
+        "membershipLevel": "Silver"
+      },
+      {
+        "name": "RAGEC",
+        "address": "40 Mfilou Street, Brazzaville",
+        "phone": "242-324-588-099",
+        "website": "http://www.ragec.com",
+        "image": "ragec.jpg",
+        "membershipLevel": "Gold"
+      }
+    ]
+  }
+  

@@ -9,7 +9,7 @@
     <meta property="og:type" content="Portofolio">
     <meta property="og:image" content="https://media.licdn.com/dms/image/D4D03AQHsrcWG1vJwRQ/profile-displayphoto-shrink_400_400/0/1673903445790?e=1701907200&v=beta&t=VHxSxo5DmJJbJ_tBW5o9sXNK48BuTDliWSyojybDtV8">
     <meta property="og:url" content="https://sydrick-newton.netlify.app/">
-    <title>Chamber of Commerce Home</title>
+    <title>Bussiness Directory</title>
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/larger.css">
@@ -44,42 +44,13 @@
     </header>
     <!-- //NAVBAR -->
 
-    <!-- MAIN -->
-    <div class="hero">
-        <div class="image-container">
-            <picture>
-                <source meta="(max-width: 600px)" srcset="./images/landscape.webp">
-                <source meta="(max-width: 900px)" srcset="./images/landscape.webp">
-                <source meta="(max-width: 901px)" srcset="./images/landscape.webp">
-                <img src="./images/landscape.webp" alt="Hero Image">
-            </picture>
-            <button class="btn">Join now</button>
+    <main>
+        <div id="viewToggle">
+            <button id="grid-view">⏹️Grid</button>
+            <button id="list-view">📄List</button>
         </div>
-
-    </div>
-    <main class="column">
-        <h2>WDD 230: Web Frontend Development</h2>
-        <hr class="section-devider">
-        
-
-        <section class="events">
-            <h3>Events</h3>
-            <h4>Basketball Match - Super Basket</h4>
-            <p>Join us for the most incredible match ever seen, Monday at 2:30 p.m</p>
-            
-        </section>
-
-        <section class="weather">
-            <h3>Weather</h3>
-            <p><i class="las la-sun"></i>32°C - Sunshine</p>
-            <p>Humidity: 20%</p>
-            <p>Wind Speed: 5 mph</p>
-            <p>Wind Chill: <span id="windChill">N/A</span></p>
-        </section>
-
+        <div id="member-container"></div>
     </main>
-    <!-- //MAIN -->
-
 
 
     <footer>
@@ -88,7 +59,7 @@
     </footer>
 
     <script src="./scripts/darkmode.js"></script>
-    <script src="./scripts/script.js" defer></script>
+    <script src="./scripts/script.js"></script>
     <script src="./scripts/windchill.js"></script>
 </body>
 </html>

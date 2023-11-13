@@ -54,3 +54,58 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     localStorage.setItem("lastVisit", currentDate.toString());
   });
+
+// Directory page
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('data/members.json')
+    .then(response => response.json())
+    .then(data => displayMembers(data.members));
+
+    // View toggle buttons
+    const gridViewButton = document.getElementById('grid-view');
+    const listViewButton = document.getElementById('list-view');
+
+    gridViewButton.addEventListener('click', function () {
+        toggleView('grid');
+    });
+
+    listViewButton.addEventListener('click', function () {
+        toggleView('list');
+    });
+});
+
+function displayMembers(members) {
+  const memberContainer = document.getElementById('member-container');
+
+  //Clear existing content
+  memberContainer.innerHTML = "";
+
+  //Iterate through members and display them
+  members.forEach(member => {
+    const memberCard = document.createElement('div');
+    memberCard.classList.add('member-card');
+    // customize the HTML structure for each member card or list item as needed
+    memberCard.innerHTML = `
+        <h2>${member.name}</h2>
+        <p>${member.address}</p>
+        <p>${member.phone}</p>
+        <p><a href="${member.website}" target="_blank">${member.website}</a></p>
+        <img src="${member.image}" alt="${member.name}">
+        <p>Membership Level: ${member.membershipLevel}</p>
+    `;
+    memberContainer.appendChild(memberCard);
+  })
+}
+
+function toggleView(viewType) {
+  const memberContainer = document.getElementById('member-container');
+  memberContainer.classList.remove('grid-view', 'list-view');
+
+  if (viewType === 'grid') {
+    memberContainer.classList.add('grid-view');
+  } else if (viewType === 'list') {
+    memberContainer.classList.add('list-view');
+  }
+}
+
+
