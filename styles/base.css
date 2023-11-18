@@ -200,7 +200,16 @@ body {
     margin-top: 25px;
 }
 
-.label, .visits {
+.weather-info {
+    display: flex;
+    align-items: center;
+}
+
+#weather-icon, #temperature, #weather-condition {
+    margin-right: 10px;
+}
+
+#label, #visits {
     display: flex;
     justify-content: center;
     align-items: center;
