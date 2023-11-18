@@ -109,3 +109,48 @@ function toggleView(viewType) {
 }
 
 
+// Weather script
+
+document.addEventListener("DOMContentLoaded", function () {
+  const apiKey = "eac1da47236a8fe587a56e2522f38bd7";
+  const city = "Brazzaville";
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+          displayWeather(data);
+      })
+      .catch(error => {
+          console.error('Error fetching weather data:', error);
+      });
+});
+
+function displayWeather(data) {
+  const weatherIconContainer = document.getElementById('weather-icon');
+  const temperatureElement = document.getElementById('temperature');
+  const humidityElement = document.getElementById('humidity');
+  const windSpeedElement = document.getElementById('wind-speed');
+  const windChillElement = document.getElementById('windChill');
+
+  const temperature = data.main.temp;
+  const humidity = data.main.humidity;
+  const windSpeed = data.wind.speed;
+
+  weatherIconContainer.innerHTML = `<img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="Weather Icon">`;
+
+  temperatureElement.textContent = `${temperature} °C`;
+  humidityElement.textContent = `${humidity}%`;
+  windSpeedElement.textContent = `${windSpeed}mph`;
+
+  // Calculate wind chill if temperature and wind speed are available
+  if (temperature !== undefined && windSpeed !== undefined) {
+      const windChill = calculateWindChill(temperature, windSpeed);
+      windChillElement.textContent = `${windChill} °C`;
+  }
+}
+
+function calculateWindChill(temperature, windSpeed) {
+  // Formula to calculate wind chill
+  return Math.round(13.12 + 0.6215 * temperature - 11.37 * Math.pow(windSpeed, 0.16) + 0.3965 * temperature * Math.pow(windSpeed, 0.16));
+}

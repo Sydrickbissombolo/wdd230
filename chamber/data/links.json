@@ -1,0 +1,17 @@
+{
+    "lessons": [
+        {
+            "lesson": "02",
+            "links": [
+                {
+                    "url":"lesson02/mediaquery.html",
+                    "title": "Media Queries"
+                },
+                {
+                    "url":"lesson02/design-principal.html",
+                    "title":"Design Principal Document"
+                }
+            ]
+        }
+    ]
+}
