@@ -71,14 +71,23 @@
             
         </section>
 
-        <section id="weather" class="weather">
-            <h3>Weather</h3>
-            <div id="weather-icon"></div>
-            <p><span id="temperature"></span></p>
-            <p>Humidity: <span id="humidity">%</span></p>
-            <p>Wind Speed: <span id="wind-speed">mph</span></p>
-            <p>Wind Chill: <span id="windChill">N/A</span></p>
+        <section class="info-card">
+            <h3>Information</h3>
+            <p id="location">Dolisie</p>
+            <div class="weather-info">
+                <span id="weather-icon"></span>
+                <span id="temperature"></span>
+                <span id="weather-condition"></span>
+                <div id="forecast"></div>
+            </div>
+            <span id="label">Number of Visits: </span>
+            <span id="visits"></span>
         </section>
+    
+        <div id="banner" class="banner">
+            <p>Join us for the Chamber of Commerce meet and greet on Wednesday at 7:00 p.m.</p>
+            <button id="closeBanner">Close</button>
+        </div>
 
     </main>
     <!-- //MAIN -->

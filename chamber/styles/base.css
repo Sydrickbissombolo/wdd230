@@ -107,27 +107,23 @@ header {
 
 
 /* Information Card Styles */
-.weather {
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+.info-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
-.weather h3 {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    margin-top: 0;
-    border-radius: 5px 5px 0 0;
-    font-size: 24px;
-    text-align: center;
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-.weather p {
-    text-align: center;
-    margin-top: 25px;
+#weather-icon img {
+  width: 50px;
 }
 
 .column {
@@ -428,4 +424,28 @@ main {
 .list-view .member-item img {
   max-width: 100%;
   height: auto;
+}
+
+/* Banner*/
+.banner {
+  display: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#closeBanner {
+  background-color: #f8f9fa;
+  border: none;
+  color: #007bff;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
 }
