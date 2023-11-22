@@ -18,25 +18,28 @@
     <link rel="stylesheet" href="./scripts/script.js">
     <link rel="stylesheet" href="./styles/darkmode.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-rwoIYYx3ct6+5eT4jOXUnlL3riF63t0xFrRwCtFmgmwiGg/hpDBweMS6c4Y6LlM2" crossorigin="anonymous">
-
-    <script src="./scripts/darkmode.js" defer></script>
 </head>
 <body>
-    <!-- NAVBAR -->
     <header>
-        <div class="menu-toggle">
-            <input type="checkbox">
-            <span></span>
-            <span></span>
-            <span></span>
-
+        <div class="logo">
+            <!-- Logo image -->
+            <img src="./images/logo.webp" alt="My logo">
+            <!-- Text beside the logo -->
+            <span>Dolisie<br>The Chamber of Commerce</span>
         </div>
-        <nav>
-            <img src="./images/logo.webp" alt="Site name">
-            <a href="https://www.facebook.com/yourpage"><img src="./images/facebook.png" alt="Facebook"></a>
-            <a href="https://twitter.com/yourhandle"><img src="./images/twitter.png" alt="Twitter"></a>
-            <a href="https://www.linkedin.com/in/yourprofile"><img src="./images/linkedin.png" alt="LinkedIn"></a>
-            <ul class="menu">
+        <div class="social-icon">
+            <img src="./images/facebook.png" alt="Facebook Icon">
+            <img src="./images/twitter.png" alt="Twitter Icon">
+        </div>
+        <!-- Hamburger menu -->
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        
+        <nav class="mobile-nav">
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
@@ -44,59 +47,55 @@
             </ul>
         </nav>
     </header>
-    <!-- //NAVBAR -->
 
     <!-- MAIN -->
-    <div class="hero">
-        <div class="image-container">
-            <picture>
-                <source meta="(max-width: 600px)" srcset="./images/landscape.webp">
-                <source meta="(max-width: 900px)" srcset="./images/landscape.webp">
-                <source meta="(max-width: 901px)" srcset="./images/landscape.webp">
-                <img src="./images/landscape.webp" alt="Hero Image">
-            </picture>
-            <button class="btn">Join now</button>
-        </div>
-
-    </div>
-    <main class="column">
-        <h2>WDD 230: Web Frontend Development</h2>
-        <hr class="section-devider">
-        
-
-        <section class="events">
-            <h3>Events</h3>
-            <h4>Basketball Match - Super Basket</h4>
-            <p>Join us for the most incredible match ever seen, Monday at 2:30 p.m</p>
-            
+    <main>
+        <section class="hero">
+            <!-- Hero image goes here -->
+            <img src="./images/landscape.webp" alt="Hero Image">
+            <!-- Button within the hero image -->
+            <button>Join the Chamber</button>
         </section>
 
-        <section class="info-card">
-            <h3>Information</h3>
-            <p id="location">Dolisie</p>
-            <div class="weather-info">
-                <span id="weather-icon"></span>
-                <span id="temperature"></span>
-                <span id="weather-condition"></span>
-                <div id="forecast"></div>
+        <section class="grid">
+            <!-- Grid of cards -->
+            <div class="card">
+                <h2>Events</h2>
+                <hr>
+                <h5>Amazing gathering - FSY for Young single adults</h5>
+                <p>Jon us for the first FSY for young single adults of the chuch of Jesus Christ of latter-day Saints</p>
             </div>
-            <span id="label">Number of Visits: </span>
-            <span id="visits"></span>
+
+            <section id="weather" class="weather">
+                <h2>Weather</h2>
+                <hr>
+                <div id="weather-icon"></div>
+                <p id="temperature"><i class="fa fa-sun-o" aria-hidden="true"></i></p>
+                <p id="weather-condition"></p>
+                <p>Humidity: <span id="humidity"></span></p>
+                <p>Wind Speed: <span id="wind-speed"></span></p>
+                <p>Wind Chill: <span id="windChill">N/A</span></p>
+            </section>
+
+            <!-- More cards go here -->
         </section>
-    
-        <div id="banner" class="banner">
-            <p>Join us for the Chamber of Commerce meet and greet on Wednesday at 7:00 p.m.</p>
-            <button id="closeBanner">Close</button>
-        </div>
-
     </main>
-    <!-- //MAIN -->
-
-
-
     <footer>
-        <p>&copy; <span id="currentYear"><br>2023</span> Newton, Bissombolo<br>WDD 230</p>
         <p id="lastModified"><span>Last modification: </span></p>
+        <div class="footer-right">
+            <!-- Contact information -->
+            <p>Email: newtonbissombolo2@gmail.com</p>
+            <p>Phone: +242 (06 806 98 42)</p>
+        </div>
+        <div class="footer-left">
+            <!-- Logo repeated in the footer -->
+            <img src="./images/logo.webp" alt="Chamber of Commerce Logo">
+            <!-- Address information -->
+            <p>42 Mfilou Street, Dolisie</p>
+            <!-- Copyright and person's name -->
+            <p class="modification-date"></p>
+            <p>&copy; 2023 Chamber of Commerce. All rights reserved. | sydrick Newton | Wdd 230 Project</p>
+        </div>
     </footer>
 
     <script src="./scripts/darkmode.js" defer></script>

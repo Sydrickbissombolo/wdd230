@@ -62,16 +62,11 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(data => displayMembers(data.members));
 
     // View toggle buttons
-    const gridViewButton = document.getElementById('grid-view');
-    const listViewButton = document.getElementById('list-view');
-
-    gridViewButton.addEventListener('click', function () {
-        toggleView('grid');
-    });
-
-    listViewButton.addEventListener('click', function () {
-        toggleView('list');
-    });
+    function toggleNav() {
+      const mainNav = document.querySelector('.main-nav');
+      mainNav.style.display = mainNav.style.display === 'block' ? 'none' : 'block';
+  }
+  
 });
 
 function displayMembers(members) {
@@ -97,91 +92,72 @@ function displayMembers(members) {
   })
 }
 
-function toggleView(viewType) {
-  const memberContainer = document.getElementById('member-container');
-  memberContainer.classList.remove('grid-view', 'list-view');
+// toggle menu
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const mobileNav = document.querySelector('.mobile-nav');
 
-  if (viewType === 'grid') {
-    memberContainer.classList.add('grid-view');
-  } else if (viewType === 'list') {
-    memberContainer.classList.add('list-view');
-  }
-}
+  hamburgerMenu.addEventListener('click', function () {
+      this.classList.toggle('change');
+      mobileNav.classList.toggle('show');
+  });
+
+  // Optional: Close the mobile menu when a nav link is clicked
+  const navLinks = document.querySelectorAll('.mobile-nav a');
+  navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+          hamburgerMenu.classList.remove('change');
+          mobileNav.classList.remove('show');
+      });
+  });
+});
+
 
 
 // Weather script
-
 document.addEventListener("DOMContentLoaded", function () {
-  const apiKey = "eac1da47236a8fe587a56e2522f38bd7";
-  const chamberLocation = "Dolisie";
-  const apiUrlCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${chamberLocation}&appid=${apiKey}&units=metric`;
-  const apiUrlForecast = `https://api.openweathermap.org/data/2.5/onecall?lat={LATITUDE}&lon={LONGITUDE}&exclude=current,minutely,hourly&appid=${apiKey}&units=metric`;
+  const apiKey = 'eac1da47236a8fe587a56e2522f38bd7';
+  const city = 'Brazzaville';
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-  // Checking if today is Monday, Tuesday, or Wednesday
-  const today = new Date().getDay();
-  const isBannerDay = today >= 1 && today <= 3;
-
-  // Displaying or hiding the banner
-  const banner = document.getElementById('banner');
-  const closeBannerButton = document.getElementById('closeBanner');
-
-  if (isBannerDay) {
-      banner.style.display = 'block';
-  }
-
-  closeBannerButton.addEventListener('click', function () {
-      banner.style.display = 'none';
-  });
-
-  // Fetch current weather data
-  fetch(apiUrlCurrent)
+  fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
-          displayCurrentWeather(data);
+          displayWeather(data);
       })
       .catch(error => {
-          console.error('Error fetching current weather data:', error);
-      });
-
-  // Fetch forecast data
-  fetch(apiUrlForecast)
-      .then(response => response.json())
-      .then(data => {
-          displayForecast(data);
-      })
-      .catch(error => {
-          console.error('Error fetching forecast data:', error);
+          console.error('Error fetching weather data:', error);
       });
 });
 
-function displayCurrentWeather(data) {
-  // Display current weather information
-  const locationElement = document.getElementById('location');
-  const weatherIconElement = document.getElementById('weather-icon');
+function displayWeather(data) {
+  const weatherIconContainer = document.getElementById('weather-icon');
   const temperatureElement = document.getElementById('temperature');
   const weatherConditionElement = document.getElementById('weather-condition');
+  const humidityElement = document.getElementById('humidity');
+  const windSpeedElement = document.getElementById('wind-speed');
+  const windChillElement = document.getElementById('windChill');
 
-  const weatherIconUrl = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+  const temperature = data.main.temp;
+  const humidity = data.main.humidity;
+  const windSpeed = data.wind.speed;
+  const weatherCondition = data.weather[0].description;
 
-  locationElement.textContent = data.name + ', ' + data.sys.country;
-  weatherIconElement.innerHTML = `<img src="${weatherIconUrl}" alt="Weather Icon">`;
-  temperatureElement.textContent = `${data.main.temp} °C`;
-  weatherConditionElement.textContent = data.weather[0].description;
+  weatherIconContainer.innerHTML = `<img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="Weather Icon"><span>${temperature} °C</span>`;
+  
+
+  weatherConditionElement.textContent = weatherCondition;
+  humidityElement.textContent = `${humidity}%`;
+  windSpeedElement.textContent = `${windSpeed} mph`;
+
+  // Calculate wind chill if temperature and wind speed are available
+  if (temperature !== undefined && windSpeed !== undefined) {
+      const windChill = calculateWindChill(temperature, windSpeed);
+      windChillElement.textContent = `${windChill} °C`;
+  }
 }
 
-function displayForecast(data) {
-  // Display three-day forecast
-  const forecastElement = document.getElementById('forecast');
-  const forecastData = data.daily.slice(1, 4); // Extracting the next three days
-
-  forecastData.forEach(day => {
-      const date = new Date(day.dt * 1000).toLocaleDateString('en-US', { weekday: 'long' });
-      const tempMin = day.temp.min.toFixed(1);
-      const tempMax = day.temp.max.toFixed(1);
-
-      const forecastItem = document.createElement('div');
-      forecastItem.innerHTML = `<p>${date}</p><p>Min: ${tempMin} °C | Max: ${tempMax} °C</p>`;
-
-      forecastElement.appendChild(forecastItem);
-  });
+function calculateWindChill(temperature, windSpeed) {
+  // Formula to calculate wind chill
+  return Math.round(13.12 + 0.6215 * temperature - 11.37 * Math.pow(windSpeed, 0.16) + 0.3965 * temperature * Math.pow(windSpeed, 0.16));
 }
