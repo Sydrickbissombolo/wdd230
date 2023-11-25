@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="./styles/larger.css">
     <link rel="stylesheet" href="./styles/medium.css">
     <link rel="stylesheet" href="./favicon.ico">
-    <link rel="stylesheet" href="./scripts/script.js">
     <link rel="stylesheet" href="./styles/darkmode.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-rwoIYYx3ct6+5eT4jOXUnlL3riF63t0xFrRwCtFmgmwiGg/hpDBweMS6c4Y6LlM2" crossorigin="anonymous">
 </head>
@@ -50,12 +49,16 @@
 
     <!-- MAIN -->
     <main>
+        <div id="banner-container">
+            <p>Chamber of Commerce Meet and Greet on Wednesday at 7:00 p.m.</p>
+            <button id="close-banner-button">Close</button>
+        </div>
         <section class="hero">
             <h1>Welcome to the Chamber of Commerce</h1>
             <!-- Hero image goes here -->
             <img src="./images/landscape.webp" alt="Hero Image">
             <!-- Button within the hero image -->
-            <button>Join the Chamber</button>
+            <a href="join.html" class="hero-button">Join the Chamber</a>
         </section>
 
         <section class="grid">
@@ -76,12 +79,13 @@
                 <p>Humidity: <span id="humidity"></span></p>
                 <p>Wind Speed: <span id="wind-speed"></span></p>
                 <p>Wind Chill: <span id="windChill">N/A</span></p>
+                <div id="weather-forecast"></div>
             </section>
 
             <!-- More cards go here -->
         </section>
     </main>
-    <footer>
+    <footer class="footer-1">
         <p id="lastModified"><span>Last modification: </span></p>
         <div class="footer-right">
             <!-- Contact information -->

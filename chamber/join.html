@@ -15,26 +15,30 @@
     <link rel="stylesheet" href="./styles/larger.css">
     <link rel="stylesheet" href="./styles/medium.css">
     <link rel="stylesheet" href="./favicon.ico">
-    <link rel="stylesheet" href="./scripts/script.js">
     <link rel="stylesheet" href="./styles/darkmode.css">
-    <script src="./scripts/darkmode.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-rwoIYYx3ct6+5eT4jOXUnlL3riF63t0xFrRwCtFmgmwiGg/hpDBweMS6c4Y6LlM2" crossorigin="anonymous">
 </head>
 <body>
-    <!-- NAVBAR -->
     <header>
-        <div class="menu-toggle">
-            <input type="checkbox">
-            <span></span>
-            <span></span>
-            <span></span>
-
+        <div class="logo">
+            <!-- Logo image -->
+            <img src="./images/logo.webp" alt="My logo">
+            <!-- Text beside the logo -->
+            <span>Dolisie<br>The Chamber of Commerce</span>
         </div>
-        <nav>
-            <img src="./images/logo.webp" alt="Site name">
-            <a href="https://www.facebook.com/yourpage"><img src="./images/facebook.png" alt="Facebook"></a>
-            <a href="https://twitter.com/yourhandle"><img src="./images/twitter.png" alt="Twitter"></a>
-            <a href="https://www.linkedin.com/in/yourprofile"><img src="./images/linkedin.png" alt="LinkedIn"></a>
-            <ul class="menu">
+        <div class="social-icon">
+            <img src="./images/facebook.png" alt="Facebook Icon">
+            <img src="./images/twitter.png" alt="Twitter Icon">
+        </div>
+        <!-- Hamburger menu -->
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        
+        <nav class="mobile-nav">
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
@@ -42,52 +46,67 @@
             </ul>
         </nav>
     </header>
-    <!-- //NAVBAR -->
-    <main>
-        <form action="thankyou.html" method="get">
-            <label for="first_name">Applicant's First Name:</label><br>
-            <input type="text" id="first_name" name="first_name" required><br><br>
-    
-            <label for="last_name">Applicant's Last Name:</label><br>
-            <input type="text" id="last_name" name="last_name" required><br><br>
-    
-            <label for="title">Applicant's Title/Position:</label><br>
-            <input type="text" id="title" name="title" pattern="[A-Za-z -]{7,}" title="Please enter a valid title with at least seven characters and only alphabets, hyphens, and spaces."><br><br>
-    
-            <label for="email">Email Address:</label><br>
-            <input type="email" id="email" name="email" required placeholder="example@example.com"><br><br>
-    
-            <label for="phone">Mobile Phone Number:</label><br>
-            <input type="tel" id="phone" name="phone" required><br><br>
-    
-            <label for="organization">Business/Organization Name:</label><br>
-            <input type="text" id="organization" name="organization" required><br><br>
-    
-            <label for="membership">Membership Level:</label><br>
-            <select id="membership" name="membership">
-                <option value="NP Membership">NP Membership</option>
-                <option value="Bronze Membership">Bronze Membership</option>
-                <option value="Silver Membership">Silver Membership</option>
-                <option value="Gold Membership">Gold Membership</option>
-            </select><br><br>
-    
-            <label for="description">Business/Organization Description:</label><br>
-            <textarea id="description" name="description"></textarea><br><br>
-    
-            <input type="hidden" id="timestamp" name="timestamp" value="">
-    
-            <input type="submit" value="Submit">
+
+    <div class="container-1">
+        <form action="thankyou.html" method="get" id="membershipForm">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="firstName">Title or Position:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="firstName">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="newtonb@example.com">
+
+            <label for="firstName">Mobile Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="firstName">Organization Name:</label>
+            <input type="text" id="organization" name="organization" required>
+
+            <label for="firstName">Membership Level:</label>
+            <select name="membershipLevel" id="membershipLevel">
+                <option value="NP">NP Membership</option>
+                <option value="Bronze">Bronze Membership</option>
+                <option value="Silver">Silver Membership</option>
+                <option value="Gold">Gold Membership</option>
+            </select>
+
+            <label for="description">Organization Description:</label>
+            <textarea name="description" id="description"></textarea>
+
+            <input type="hidden" id="formTimestamp" name="FormTimestamp">
+
+            <button type="submit">Submit</button>
         </form>
-    </main>
 
+        <div class="membership-benefits">
 
+        </div>
+    </div>
 
-    <footer>
-        <p>&copy; <span id="currentYear"><br>2023</span> Newton, Bissombolo<br>WDD 230</p>
+    <footer class="footer-1">
         <p id="lastModified"><span>Last modification: </span></p>
+        <div class="footer-right">
+            <!-- Contact information -->
+            <p>Email: newtonbissombolo2@gmail.com</p>
+            <p>Phone: +242 (06 806 98 42)</p>
+        </div>
+        <div class="footer-left">
+            <!-- Logo repeated in the footer -->
+            <img src="./images/logo.webp" alt="Chamber of Commerce Logo">
+            <!-- Address information -->
+            <p>42 Mfilou Street, Dolisie</p>
+            <!-- Copyright and person's name -->
+            <p class="modification-date"></p>
+            <p>&copy; 2023 Chamber of Commerce. All rights reserved. | sydrick Newton | Wdd 230 Project</p>
+        </div>
     </footer>
 
-    <script src="./scripts/darkmode.js"></script>
+    <script src="./scripts/darkmode.js" defer></script>
     <script src="./scripts/script.js" defer></script>
     <script src="./scripts/windchill.js"></script>
 </body>

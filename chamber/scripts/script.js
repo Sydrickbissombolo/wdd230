@@ -36,23 +36,29 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    // Display message based on the last visit date
-    var lastVisit = localStorage.getItem("lastVisit");
-    var currentDate = Date.now();
-    var messageArea = document.getElementById("visit-message");
-    if (!lastVisit) {
-      messageArea.textContent = "Welcome! Let us know if you have any questions.";
-    } else {
-      lastVisit = parseInt(lastVisit);
-      var daysElapsed = Math.floor((currentDate - lastVisit) / (1000 * 60 * 60 * 24));
-      if (daysElapsed < 1) {
-        messageArea.textContent = "Back so soon! Awesome!";
-      } else {
-        var message = daysElapsed === 1 ? "day" : "days";
-        messageArea.textContent = "You last visited " + daysElapsed + " " + message + " ago.";
-      }
-    }
-    localStorage.setItem("lastVisit", currentDate.toString());
+     // Check if this is the user's first visit
+if (!localStorage.getItem('lastVisit')) {
+  document.querySelector('.sidebar').innerHTML += "<p>Welcome! Let us know if you have any questions.</p>";
+} else {
+  // Calculate the number of days since the last visit
+  var currentDate = new Date();
+  var lastVisitDate = new Date(parseInt(localStorage.getItem('lastVisit')));
+
+  var timeDifference = currentDate - lastVisitDate;
+  var daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+  // Display the appropriate message
+  if (daysDifference === 0) {
+      document.querySelector('.sidebar').innerHTML += "<p>Back so soon! Awesome!</p>";
+  } else {
+      var daysText = daysDifference === 1 ? 'day' : 'days';
+      document.querySelector('.sidebar').innerHTML += "<p>You last visited " + daysDifference + " " + daysText + " ago.</p>";
+  }
+}
+
+// Store the current visit date in localStorage
+localStorage.setItem('lastVisit', Date.now());
+
   });
 
 // Directory page
@@ -67,6 +73,23 @@ document.addEventListener('DOMContentLoaded', function () {
       mainNav.style.display = mainNav.style.display === 'block' ? 'none' : 'block';
   }
   
+
+  const Date = new Date();
+  const dayOfWeek = currentDate.getDay();
+
+  if (dayOfWeek >= 1 && dayOfWeek <= 3) {
+    const bannerContainer = document.getElementById('banner-container');
+    const closeBannerButton = document.getElementById('close-banner-button');
+
+    if (!localStorage.getItem('bannerClosed')) {
+      bannerContainer.style.display = 'block';
+
+      closeBannerButton.addEventListener('click', function () {
+        bannerContainer.style.display = 'none';
+        localStorage.setItem('bannerClosed', 'true');
+      });
+    }
+  }
 });
 
 function displayMembers(members) {
@@ -92,6 +115,14 @@ function displayMembers(members) {
   })
 }
 
+function showGrid() {
+  document.getElementById('memberDisplay').classList.remove('list-view');
+}
+
+function showList() {
+  document.getElementById('memberDisplay').classList.add('list-view');
+}
+
 // toggle menu
 document.addEventListener("DOMContentLoaded", function () {
   const hamburgerMenu = document.querySelector('.hamburger-menu');
@@ -102,14 +133,6 @@ document.addEventListener("DOMContentLoaded", function () {
       mobileNav.classList.toggle('show');
   });
 
-  // Optional: Close the mobile menu when a nav link is clicked
-  const navLinks = document.querySelectorAll('.mobile-nav a');
-  navLinks.forEach(link => {
-      link.addEventListener('click', function () {
-          hamburgerMenu.classList.remove('change');
-          mobileNav.classList.remove('show');
-      });
-  });
 });
 
 
@@ -157,7 +180,50 @@ function displayWeather(data) {
   }
 }
 
+// Function to fetch and display a three-day forecast
+function fetchThreeDayForecast() {
+  const forecastApiKey = 'ccc40f172c1d984a2c5ada7b91217041';
+  const forecastApiUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat={-4.2634}&lon={15.2429}&exclude=current,minutely,hourly,alerts&appid={API_KEY}';
+
+  fetch(forecastApiUrl)
+    .then(response => response.json())
+    .then(data => {
+      displayThreeDayForecast(data);
+    })
+
+    .catch(error => {
+      console.error('Error fetching forecast data:', error);
+    });
+}
+
+// Function to display three-day forecast
+function displayThreeDayForecast(data) {
+  const forecastElement = document.getElementById('weather-info');
+  const forecastList = data.list;
+
+  //Display the forecast for the next three days
+  for (let i = 0; i < forecastList.length; i =+ 8) {
+    const forecastItem = forecastList[i];
+    const forecastDate = new Date(forecastItem.dt * 1000);
+    const forecastTemperature = forecastItem.main.temp;
+    const forecastWeatherCondition = forecastItem.weather[0].description;
+
+    const forecastHtml = `<p>${forecastDate.toDateString()} - ${forecastTemperature} °C, ${forecastWeatherCondition}</p>`;
+    forecastElement.innerHTML += forecastHtml;
+  }
+
+  
+
+  fetchThreeDayForecast();
+}
+
 function calculateWindChill(temperature, windSpeed) {
   // Formula to calculate wind chill
   return Math.round(13.12 + 0.6215 * temperature - 11.37 * Math.pow(windSpeed, 0.16) + 0.3965 * temperature * Math.pow(windSpeed, 0.16));
 }
+
+
+// Join JS
+document.getElementById("formTimestamp").value = Date.now();
+
+  

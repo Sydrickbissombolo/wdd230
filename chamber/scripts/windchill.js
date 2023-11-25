@@ -9,3 +9,25 @@ if (temperature <= 50 && windSpeed > 3.0) {
 } else {
     windChillElement.textContent = "N/A";
 }
+
+// Function to display three-day forecast
+function displayThreeDayForecast(data) {
+    const forecastElement = document.getElementById('weather-forecast');
+    const forecastList = data.daily; // Change this line
+  
+    // Clear existing content
+    forecastElement.innerHTML = "";
+  
+    // Display the forecast for the next three days
+    for (let i = 1; i <= 3; i++) {
+      const forecastItem = forecastList[i];
+      const forecastDate = new Date(forecastItem.dt * 1000);
+      const forecastTemperature = forecastItem.temp.day;
+      const forecastWeatherCondition = forecastItem.weather[0].description;
+  
+      const forecastHtml = `<p>${forecastDate.toDateString()} - ${forecastTemperature} °C, ${forecastWeatherCondition}</p>`;
+      forecastElement.innerHTML += forecastHtml;
+    }
+  }
+
+  

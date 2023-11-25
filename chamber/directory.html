@@ -9,32 +9,36 @@
     <meta property="og:type" content="Portofolio">
     <meta property="og:image" content="https://media.licdn.com/dms/image/D4D03AQHsrcWG1vJwRQ/profile-displayphoto-shrink_400_400/0/1673903445790?e=1701907200&v=beta&t=VHxSxo5DmJJbJ_tBW5o9sXNK48BuTDliWSyojybDtV8">
     <meta property="og:url" content="https://sydrick-newton.netlify.app/">
-    <title>Bussiness Directory</title>
+    <title>Chamber of Commerce Home</title>
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/larger.css">
     <link rel="stylesheet" href="./styles/medium.css">
     <link rel="stylesheet" href="./favicon.ico">
-    <link rel="stylesheet" href="./scripts/script.js">
     <link rel="stylesheet" href="./styles/darkmode.css">
-    <script src="./scripts/darkmode.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-rwoIYYx3ct6+5eT4jOXUnlL3riF63t0xFrRwCtFmgmwiGg/hpDBweMS6c4Y6LlM2" crossorigin="anonymous">
 </head>
 <body>
-    <!-- NAVBAR -->
     <header>
-        <div class="menu-toggle">
-            <input type="checkbox">
-            <span></span>
-            <span></span>
-            <span></span>
-
+        <div class="logo">
+            <!-- Logo image -->
+            <img src="./images/logo.webp" alt="My logo">
+            <!-- Text beside the logo -->
+            <span>Dolisie<br>The Chamber of Commerce</span>
         </div>
-        <nav>
-            <img src="./images/logo.webp" alt="Site name">
-            <a href="https://www.facebook.com/yourpage"><img src="./images/facebook.png" alt="Facebook"></a>
-            <a href="https://twitter.com/yourhandle"><img src="./images/twitter.png" alt="Twitter"></a>
-            <a href="https://www.linkedin.com/in/yourprofile"><img src="./images/linkedin.png" alt="LinkedIn"></a>
-            <ul class="menu">
+        <div class="social-icon">
+            <img src="./images/facebook.png" alt="Facebook Icon">
+            <img src="./images/twitter.png" alt="Twitter Icon">
+        </div>
+        <!-- Hamburger menu -->
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        
+        <nav class="mobile-nav">
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
@@ -53,13 +57,26 @@
     </main>
 
 
-    <footer>
-        <p>&copy; <span id="currentYear"><br>2023</span> Newton, Bissombolo<br>WDD 230</p>
+    <footer class="footer-1">
         <p id="lastModified"><span>Last modification: </span></p>
+        <div class="footer-right">
+            <!-- Contact information -->
+            <p>Email: newtonbissombolo2@gmail.com</p>
+            <p>Phone: +242 (06 806 98 42)</p>
+        </div>
+        <div class="footer-left">
+            <!-- Logo repeated in the footer -->
+            <img src="./images/logo.webp" alt="Chamber of Commerce Logo">
+            <!-- Address information -->
+            <p>42 Mfilou Street, Dolisie</p>
+            <!-- Copyright and person's name -->
+            <p class="modification-date"></p>
+            <p>&copy; 2023 Chamber of Commerce. All rights reserved. | sydrick Newton | Wdd 230 Project</p>
+        </div>
     </footer>
 
-    <script src="./scripts/darkmode.js"></script>
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/darkmode.js" defer></script>
+    <script src="./scripts/script.js" defer></script>
     <script src="./scripts/windchill.js"></script>
 </body>
 </html>

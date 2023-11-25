@@ -9,7 +9,7 @@
     <meta property="og:type" content="Portofolio">
     <meta property="og:image" content="https://media.licdn.com/dms/image/D4D03AQHsrcWG1vJwRQ/profile-displayphoto-shrink_400_400/0/1673903445790?e=1701907200&v=beta&t=VHxSxo5DmJJbJ_tBW5o9sXNK48BuTDliWSyojybDtV8">
     <meta property="og:url" content="https://sydrick-newton.netlify.app/">
-    <title>Chamber of Commerce Home</title>
+    <title>Chamber of Commerce Discover</title>
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/larger.css">
@@ -17,24 +17,30 @@
     <link rel="stylesheet" href="./favicon.ico">
     <link rel="stylesheet" href="./scripts/script.js">
     <link rel="stylesheet" href="./styles/darkmode.css">
-    <script src="./scripts/darkmode.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-rwoIYYx3ct6+5eT4jOXUnlL3riF63t0xFrRwCtFmgmwiGg/hpDBweMS6c4Y6LlM2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/discover.css"> <!-- Add a new CSS file for discover page -->
 </head>
 <body>
-    <!-- NAVBAR -->
     <header>
-        <div class="menu-toggle">
-            <input type="checkbox">
-            <span></span>
-            <span></span>
-            <span></span>
-
+        <div class="logo">
+            <!-- Logo image -->
+            <img src="./images/logo.webp" alt="My logo">
+            <!-- Text beside the logo -->
+            <span>Dolisie<br>The Chamber of Commerce</span>
         </div>
-        <nav>
-            <img src="./images/logo.webp" alt="Site name">
-            <a href="https://www.facebook.com/yourpage"><img src="./images/facebook.png" alt="Facebook"></a>
-            <a href="https://twitter.com/yourhandle"><img src="./images/twitter.png" alt="Twitter"></a>
-            <a href="https://www.linkedin.com/in/yourprofile"><img src="./images/linkedin.png" alt="LinkedIn"></a>
-            <ul class="menu">
+        <div class="social-icon">
+            <img src="./images/facebook.png" alt="Facebook Icon">
+            <img src="./images/twitter.png" alt="Twitter Icon">
+        </div>
+        <!-- Hamburger menu -->
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        
+        <nav class="mobile-nav">
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
@@ -42,60 +48,57 @@
             </ul>
         </nav>
     </header>
-    <!-- //NAVBAR -->
 
-    
-    <div class="grid-container">
-        <div class="sidebar">
-          <h2>Welcome to Our Area!</h2>
-          <p>Discover the beauty and opportunities of our vibrant community.</p>
-          <div id="visit-message"></div>
-          <h3>Demographics</h3>
-          <p>Population: 5,000,000</p>
-          <p>Median Age: 25</p>
-          <p>Median Household Income: $20,000</p>
+    <!-- MAIN -->
+    <main class="container">
+        <section class="sidebar">
+            <!-- Sidebar content goes here -->
+            <h2>About Our City</h2>
+            <p>Welcome to Dolisie, a vibrant city with a rich history and diverse culture. Explore the unique attractions, events, and demographics that make our city special.</p>
 
-          <h3>Statistics</h3>
-          <p>Unemployment Rate: 77%</p>
-          <p>Education Level: 45% have a bachelor's degree or higher</p>
-        </div>
-        <div class="main-area">
-          <h2>Explore Our Area</h2>
-          <div class="gallery">
-            <figure>
-              <img src="./images/image1.jpg" alt="snowboarding in the mountains" class="gallery-image" loading="lazy" />
-              <figcaption>Look at the snowborders</figcaption>
-            </figure>
-            <figure>
-                <img src="./images/image2.jpg" alt="Panoramic view of the city" class="gallery-image" loading="lazy" />
-                <figcaption>Grand Tour</figcaption>
-              </figure>
-              <figure>
-                <img src="./images/image3.jpg" alt="Interior of the library" class="gallery-image" loading="lazy" />
-                <figcaption>Library</figcaption>
-              </figure>
-              <figure>
-                <img src="./images/image4.jpg" alt="Scenic landscape with rivers" class="gallery-image" loading="lazy" />
-                <figcaption>enjoy the scenery</figcaption>
-              </figure>
-              <figure>
-                <img src="./images/image5.jpg" alt="Beautiful natural landscape" class="gallery-image" loading="lazy" />
-                <figcaption>Fantastic landscape</figcaption>
-              </figure>
-              <figure>
-                <img src="./images/image6.jpg" alt="Sandy beach with clear blue water" class="gallery-image" loading="lazy" />
-                <figcaption>Let's go to the beach</figcaption>
-              </figure>
-            
-          </div>
-        </div>
-      </div>
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li>City Festival - June 15, 2023</li>
+                <li>Local Art Exhibition - July 2, 2023</li>
+                <li>Community Picnic - August 10, 2023</li>
+            </ul>
+
+            <h2>City Statistics</h2>
+            <p>Population: 150,000</p>
+            <p>Median Income: $40,000</p>
+            <p>Major Industries: Manufacturing, Tourism</p>
+        </section>
+
+        <section class="grid-dis">
+            <!-- Main area with local photos -->
+            <img src="./images/image1.jpg" alt="Photo 1" loading="lazy" class="gallery-image">
+            <img src="./images/image2.jpg" alt="Photo 2" loading="lazy" class="gallery-image">
+            <img src="./images/image3.jpg" alt="Photo 3" loading="lazy" class="gallery-image">
+            <img src="./images/image4.jpg" alt="Photo 4" loading="lazy" class="gallery-image">
+            <img src="./images/image5.jpg" alt="Photo 5" loading="lazy" class="gallery-image">
+            <img src="./images/image6.jpg" alt="Photo 6" loading="lazy" class="gallery-image">
+        </section>
+    </main>
+
     <footer>
-        <p>&copy; <span id="currentYear"><br>2023</span> Newton, Bissombolo<br>WDD 230</p>
         <p id="lastModified"><span>Last modification: </span></p>
+        <div class="footer-right">
+            <!-- Contact information -->
+            <p>Email: newtonbissombolo2@gmail.com</p>
+            <p>Phone: +242 (06 806 98 42)</p>
+        </div>
+        <div class="footer-left">
+            <!-- Logo repeated in the footer -->
+            <img src="./images/logo.webp" alt="Chamber of Commerce Logo">
+            <!-- Address information -->
+            <p>42 Mfilou Street, Dolisie</p>
+            <!-- Copyright and person's name -->
+            <p class="modification-date"></p>
+            <p>&copy; 2023 Chamber of Commerce. All rights reserved. | sydrick Newton | Wdd 230 Project</p>
+        </div>
     </footer>
 
-    <script src="./scripts/darkmode.js"></script>
+    <script src="./scripts/darkmode.js" defer></script>
     <script src="./scripts/script.js" defer></script>
     <script src="./scripts/windchill.js"></script>
 </body>
