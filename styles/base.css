@@ -130,12 +130,6 @@ section {
     gap: 20px;
 }
 
-#grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-
 /* FOOTTER*/
 footer {
     background-color: #333;
