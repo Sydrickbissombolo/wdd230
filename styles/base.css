@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+}
+
+/*NAV STYLES */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    margin-bottom: 80px;
+}
+
+nav {
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+.social-icons a {
+    color: #3498db;
+    margin: 0 10px;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #3378a7;
+}
+
+/*HOME PAGE SECTION*/
+section {
+    padding: 20px;
+}
+
+.img-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-grid img {
+    max-width: 30%;
+    height: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.summary {
+    background-color: #333;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.summary ul {
+    list-style: none;
+}
+
+.weather {
+    background-color: #333;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.alert {
+    color: red;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* FOOTTER*/
+footer {
+    background-color: #333;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /*margin-top: 20px;*/
+}
+
+footer span {
+    color: chocolate;
+}
+
+/* RENTALS STYLES*/
+/* TABLE STYLE*/
+#rentalTable {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#rentalTable th, #rentalTable td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+#rentalTable thead tr:first-child th {
+    font-size: 18px;
+    color: #fff;
+    background-color: #3498db;
+    text-align: center;
+}
+
+#rentalTable th {
+    background-color: #f2f2f2;
+}
+
+#rentalTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#rentalTable tr:hover {
+    background-color: #f5f5f5;
+}
+
+/*RESERVATION STYLES*/
+.reservations-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#reservation-form {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+select, textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    grid-column: span 2;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* CONTACT PAGE STYLES */
+#contact {
+    padding: 20px;
+}
+
+.contact-info {
+    max-width: 800px;
+    margin: auto;
+}
+
+.contact-details p {
+    margin: 10px 0;
+}
+
+#map {
+    margin-top: 20px;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+#map {
+    margin-bottom: 20px;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+#contact-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background-color: #2980b9;
+}
+
+/* HAMBURGER MENU*/
+.mobile-menu {
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+/* RESPONSIVE DESIGN*/
+@media (max-width: 600px) {
+    .mobile-menu {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1;
+    }
+}
+
+@media (min-width: 601px) {
+    .mobile-menu {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+    }
+}
